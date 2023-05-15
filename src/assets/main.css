@@ -1,8 +1,6 @@
-@import './base.css';
-
 body {
   margin: 0;
-  background: linear-gradient(#ffeeee, #ffffff, #ffffff);
+  background: linear-gradient(#ffeeee, #ffffff, #ffffff, #ffffff);
   background-attachment: fixed;
 }
 
