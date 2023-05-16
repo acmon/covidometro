@@ -8,6 +8,9 @@
         <img src="./assets/images/logo.png" alt="logo da página" />
       </div>
     </nav>
+    <div>
+      <h1>Conheça o Covidômetro</h1>
+    </div>
   </header>
 
   <main>
@@ -29,7 +32,6 @@
   .nav {
     padding-left: 5rem;
     justify-content: space-between;
-    align-items: center;
   }
 }
 </style>
