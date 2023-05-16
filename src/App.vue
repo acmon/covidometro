@@ -1,4 +1,5 @@
 <script setup>
+  import MainSection from './components/MainSection.vue'
 </script>
 
 <template>
@@ -20,7 +21,7 @@
   </header>
 
   <main>
-
+    <MainSection />
   </main>
 </template>
 
@@ -35,7 +36,6 @@
 }
 
 .banner {
-  color: #4f4645;
   margin: 1rem;
   display: flex
 }

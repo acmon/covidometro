@@ -3,6 +3,7 @@ body {
   background: linear-gradient(#ffeeee, #ffffff, #ffffff, #ffffff);
   background-attachment: fixed;
   font-family: 'Spectral', serif;
+  color: #4f4645;
 }
 
 /* #app {
