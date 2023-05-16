@@ -8,8 +8,14 @@
         <img src="./assets/images/logo.png" alt="logo da página" />
       </div>
     </nav>
-    <div>
-      <h1>Conheça o Covidômetro</h1>
+    <div class="banner">
+      <div class="banner--text">
+        <h1 class="banner--text-h1">Conheça o Covidômetro</h1>
+        <p class="banner--text-p">Fique atualizado com velocidade e transparência. O covidômetro é uma ferramenta que mostra para você em tempo real o número de casos e óbitos relacionados a pandemia da COVID-19 ao redor do mundo</p>
+      </div>
+      <div class="banner--image">
+        <img src="./assets/images/doctors.svg" alt="figura doutoras" />
+      </div>
     </div>
   </header>
 
@@ -28,10 +34,41 @@
   box-shadow: 0px 15px 10px -15px rgb(207, 207, 207);
 }
 
-@media (min-width: 768px) {
+.banner {
+  color: #4f4645;
+  margin: 1rem;
+  display: flex
+}
+
+.banner--image {
+  display: none;
+}
+
+@media (min-width: 815px) {
   .nav {
-    padding-left: 5rem;
+    padding-left: 8rem;
     justify-content: space-between;
+  }
+
+  .banner {
+    margin: 3rem 8rem;
+    justify-content: space-between;
+  }
+
+  .banner--text {
+    margin: 4rem 1.5rem 0 0;
+    max-width: 45rem;
+  }
+
+  .banner--text-h1 {
+    font-size: 2.5rem;
+  }
+  .banner--text-p {
+    font-size: 1.2rem;
+  }
+
+  .banner--image {
+    display: block;
   }
 }
 </style>
