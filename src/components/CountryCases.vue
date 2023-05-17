@@ -1,21 +1,31 @@
 <script setup>
+import { computed } from "vue"
+
+const props = defineProps({
+  country: Object
+})
+
+const getFatality = computed(function() {
+  const fatalityRate = (props.country.deceased * 100) / props.country.infected
+  return `${fatalityRate.toFixed(2)}%`
+})
 </script>
 
 <template>
   <div class="div-country">
-    <h2>Africa do sul</h2>
+    <h2>{{props.country.country}}</h2>
     <div class="div-cases">
       <div class="div-case-item">
         <div class="case-title">Total de casos</div>
-        <div class="case-value">36.480.487</div>
+        <div class="case-value">{{props.country.infected || '-'}}</div>
       </div>
       <div class="div-case-item">
         <div class="case-title">Mortes</div>
-        <div class="case-value">480.487</div>
+        <div class="case-value">{{props.country.deceased || '-'}}</div>
       </div>
       <div class="div-case-item">
         <div class="case-title">Fatalidade</div>
-        <div class="case-value">2,05%</div>
+        <div class="case-value">{{getFatality}}</div>
       </div>
     </div>
   </div>
@@ -30,6 +40,9 @@
   background-color: #FFF;
 }
 
+.div-cases {
+  margin-bottom: 1.5rem;
+}
 
 .case-title {
   margin-top: 1rem;
