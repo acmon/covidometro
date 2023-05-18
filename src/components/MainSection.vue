@@ -1,9 +1,10 @@
 <script setup>
 import CountryFilter from './CountryFilter.vue'
 import CountryCases from './CountryCases.vue'
-import { onBeforeMount, ref } from 'vue'
+import { computed, onBeforeMount, ref } from 'vue'
 
 let countries = ref([])
+const filter = ref("");
 
 onBeforeMount(async () => {
   const response = await fetch(
@@ -15,11 +16,17 @@ onBeforeMount(async () => {
 
   countries.value = response
 })
+
+const getCoutriesList = computed(function() {
+  const countriesList = countries.value.filter((item) => item.country.toLowerCase().includes(filter.value))
+  console.log
+  return countriesList
+})
 </script>
 
 <template>
-  <CountryFilter class="filter" />
-  <CountryCases v-for="(country, idx) in countries" :key="idx" class="country" :country="country" />
+  <CountryFilter class="filter" v-model="filter" />
+  <CountryCases v-for="(country, idx) in getCoutriesList" :key="idx" class="country" :country="country" />
 </template>
 
 <style scoped>
